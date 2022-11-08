@@ -1,0 +1,53 @@
+.list
+{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   
+   
+    &__item
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        max-width: 20em;
+        height: 30em;
+        align-items: center;
+        padding: 1em;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 15px;
+        
+
+        &__image
+        {
+            width: 10em;
+            height: 10em;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+
+        &__title
+        {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        &__description
+        {
+            font-size: 1rem;
+            align-items: left;
+            margin-bottom: 15px;
+        }
+
+        &__button
+        {
+            border-radius: 50px;
+            width: 40%;
+            height: 10%;
+            
+        }
+    }
+
+    //Format tablette
+}
