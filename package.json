@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/becodeorg/hamilton-7-character-manager-christophe-tanguy/issues"
   },
-  "homepage": "https://github.com/becodeorg/hamilton-7-character-manager-christophe-tanguy#readme"
+  "homepage": "https://github.com/becodeorg/hamilton-7-character-manager-christophe-tanguy#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
 }
