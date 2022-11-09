@@ -1,19 +1,25 @@
-
+body
+{
+    background-color: darkgray;
+}
 
 .list
 {
    display: flex;
    align-items: center;
    flex-direction: column;
+
    
    
     &__item
     {
         display: flex;
         flex-direction: column;
+
         background-color: red;
         max-width: 20em;
         height: 30em;
+        width: 500px;
         align-items: center;
         padding: 1em;
         font-family: 'Poppins', sans-serif;
@@ -53,6 +59,10 @@
             color: white;
             text-align: center;
             text-decoration-line: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
         }
     }
 

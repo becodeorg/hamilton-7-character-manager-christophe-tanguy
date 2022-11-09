@@ -1,6 +1,24 @@
 .header
 {
     display:flex;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    font-family: Poppins, sans-serif;
+    font-size: xx-large;
+    margin-top: 15px;
+
+    &__title
+    {
+        align-items: left;
+    }
+
+    &__form__search
+    {
+        display: flex;
+        border: solid;
+        align-items: right;
+        width: 40em;
+        height: 4em;
+        text-align: left;
+    }
 }
