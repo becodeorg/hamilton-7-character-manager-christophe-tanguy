@@ -1,5 +1,11 @@
-fetch("https://character-database.becode.xyz/characters")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    });
+import axios from 'axios';
+
+console.log(axios.isCancel('something'));
+
+// const url = "https://character-database.becode.xyz/characters";
+
+// axios
+//     .get(url)
+//     .then((response) => {
+//         console.log(response.data);
+//     })
