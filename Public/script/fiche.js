@@ -12,9 +12,19 @@ export function createFiche(datas) {
                 </p>
              </div>   
             <a class= "list__item__button" href="#">See character</a>
-        
         </li> 
         `;
         document.querySelector('.list').innerHTML += html;
     });
+}
+
+export function getDataForm() {
+    let data = {
+        name: document.getElementById('name').value,
+        shortDescription: document.getElementById('smallDescription').value,
+        description: document.getElementById('description').value,
+        // image: document.querySelector('#image').value
+    };
+    console.log('get data form :'+data);
+    // return data;
 }

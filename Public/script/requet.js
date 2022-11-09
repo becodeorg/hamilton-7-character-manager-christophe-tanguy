@@ -17,3 +17,9 @@ export async function traitement(url,method)
     })
 }
 
+export async function traitementPost(url,method)
+{
+    let tmp = method();
+    console.log("post :"+tmp);
+    await axios.post(url, tmp);
+}
