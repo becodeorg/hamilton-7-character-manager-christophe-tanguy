@@ -1,0 +1,25 @@
+.button
+{
+    width: 20em;
+    height: 2.5em;
+    margin: 15px auto;
+    display: block;
+    border-radius: 10px;
+    border: solid;
+    border-color: darkviolet;
+    color: deeppink;
+    background-color: darkviolet;
+    text-align: center;
+    text-decoration-line: none;
+    
+
+    //Format desktop
+
+    @media only screen and (min-width: variables.$desktop) 
+    {
+        width: 30em;
+        height: 2em;
+        font-size: 25px;
+    }
+
+}
