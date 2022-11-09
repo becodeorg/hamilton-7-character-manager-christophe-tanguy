@@ -6,9 +6,9 @@
     display: block;
     border-radius: 10px;
     border: solid;
-    border-color: darkviolet;
-    color: deeppink;
-    background-color: darkviolet;
+    border-color: variables.$couleurButton;
+    color: #edf0ff;
+    background-color: variables.$couleurButton;
     text-align: center;
     text-decoration-line: none;
     display: flex;

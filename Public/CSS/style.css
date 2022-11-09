@@ -17,9 +17,9 @@ body {
   display: block;
   border-radius: 10px;
   border: solid;
-  border-color: darkviolet;
-  color: deeppink;
-  background-color: darkviolet;
+  border-color: #06224a;
+  color: #edf0ff;
+  background-color: #06224a;
   text-align: center;
   text-decoration-line: none;
   display: flex;
@@ -35,7 +35,7 @@ body {
 }
 
 body {
-  background-color: darkgray;
+  background-color: #edf0ff;
 }
 
 .list {
@@ -43,10 +43,16 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.list__div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .list__item {
   display: flex;
   flex-direction: column;
-  background-color: red;
+  justify-content: space-between;
+  background-color: #dde4ff;
   max-width: 20em;
   width: 20em;
   height: 30em;
@@ -78,8 +84,9 @@ body {
   width: 40%;
   height: 10%;
   border: solid;
-  border-color: white;
-  color: white;
+  background-color: #06224a;
+  border-color: #06224a;
+  color: #edf0ff;
   text-align: center;
   text-decoration-line: none;
   display: flex;

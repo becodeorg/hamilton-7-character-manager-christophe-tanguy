@@ -1,6 +1,6 @@
 body
 {
-    background-color: darkgray;
+    background-color: variables.$couleurMain;
 }
 
 .list
@@ -9,14 +9,20 @@ body
    align-items: center;
    flex-direction: column;
 
+   &__div
+   {
+    display: flex;
+   align-items: center;
+   flex-direction: column;
+   }
    
    
     &__item
     {
         display: flex;
         flex-direction: column;
-
-        background-color: red;
+        justify-content: space-between;
+        background-color: variables.$couleurFiche;
         max-width: 20em;
         width: 20em;
         height: 30em;
@@ -56,8 +62,9 @@ body
             width: 40%;
             height: 10%;
             border: solid;
-            border-color: white;
-            color: white;
+            background-color: variables.$couleurButton;
+            border-color: variables.$couleurButton;
+            color: #edf0ff;
             text-align: center;
             text-decoration-line: none;
             display: flex;
