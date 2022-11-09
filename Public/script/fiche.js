@@ -18,12 +18,11 @@ export function createFiche(datas) {
 
 export function getDataForm() {
     let data = {
-        name: document.querySelector('#name').value,
-        shortDescription: document.querySelector('#smallDescription').value,
-        description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value
+        name: document.getElementById('name').value,
+        shortDescription: document.getElementById('smallDescription').value,
+        description: document.getElementById('description').value,
+        // image: document.querySelector('#image').value
     };
-    console.log("dd :"+data);
-    document.body.innerHTML = data;
+    console.log('get data form :'+data);
     // return data;
 }

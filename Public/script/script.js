@@ -4,9 +4,9 @@ import {createFiche,getDataForm} from './fiche.js';
 let url = 'https://character-database.becode.xyz/characters';
 traitement(url, createFiche);
 
-let button = document.querySelector('#button');
+//select id button in dom
+let button = document.getElementById('button');
 button.addEventListener('click', function() {
-    // traitementPost(url,getDataForm);
+    traitementPost(url,getDataForm);
     // console.log(getDataForm());
-    console.log('test');
 });
