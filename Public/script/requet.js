@@ -17,9 +17,16 @@ export async function traitement(url,method)
     })
 }
 
-export async function traitementPost(url,method)
+export async function traitementPost()//url,method
 {
+    let url = 'https://character-database.becode.xyz/characters';
     let tmp = method();
-    console.log("post :"+tmp);
+
+    let data = {
+        name: "Loic",
+        shortDescription : "codeur becode",
+        // image : "moi",
+        description : "loremp ipsum"};
+    // console.log("post :"+tmp);
     await axios.post(url, tmp);
 }
