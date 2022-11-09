@@ -133,4 +133,21 @@ body {
   text-align: left;
 }
 
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 95vw;
+  height: 95vh;
+  margin: auto;
+  font-size: 3em;
+}
+.edit__img {
+  width: 20em;
+  height: 10em;
+  font-size: 1em;
+}
+
 /*# sourceMappingURL=style.css.map */
