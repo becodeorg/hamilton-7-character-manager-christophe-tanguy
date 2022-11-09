@@ -1,11 +1,19 @@
 import axios from 'axios';
+// export * from './requet.js';
 
-console.log(axios.isCancel('something'));
+export async function traitement(url,method)
+{
+    await axios.get(url)
+    .then(function (response) {
+        console.log(response);
+        return response.data;
+    })
+    .then(function (data) {
+        method(data);
+        })
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+}
 
-// const url = "https://character-database.becode.xyz/characters";
-
-// axios
-//     .get(url)
-//     .then((response) => {
-//         console.log(response.data);
-//     })
