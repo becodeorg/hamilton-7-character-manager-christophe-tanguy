@@ -4,8 +4,14 @@
 
 // base
 @import "./base/typographie";
+@import "./base/reset.scss";
 
 // components
+@import "./components/button.scss";
+
 // layout
+@import "./layout/fiche";
+@import "./layout/header";
+
 // pages
 // vendors
