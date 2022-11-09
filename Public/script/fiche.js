@@ -19,12 +19,17 @@ export function createFiche(datas) {
 }
 
 export function getDataForm() {
+    // let data = {
+    //     name: document.getElementById('name').value,
+    //     shortDescription: document.getElementById('smallDescription').value,
+    //     description: document.getElementById('description').value,
+    //     // image: document.querySelector('#image').value
+    // };
     let data = {
-        name: document.getElementById('name').value,
-        shortDescription: document.getElementById('smallDescription').value,
-        description: document.getElementById('description').value,
-        // image: document.querySelector('#image').value
-    };
+        name: "Loic",
+        shortDescription : "codeur becode",
+        // image : "moi",
+        description : "loremp ipsum"};
     console.log('get data form :'+data);
     // return data;
 }
