@@ -17,16 +17,35 @@ export async function traitement(url,method)
     })
 }
 
-export async function traitementPost()//url,method
-{
-    let url = 'https://character-database.becode.xyz/characters';
-    let tmp = method();
+export function getDataForm(url) {
 
-    let data = {
-        name: "Loic",
-        shortDescription : "codeur becode",
-        // image : "moi",
-        description : "loremp ipsum"};
-    // console.log("post :"+tmp);
-    await axios.post(url, tmp);
+    var selectedfile = document.getElementById("image").files;
+    var txt;
+
+    if (selectedfile.length > 0) 
+    {
+        var imageFile = selectedfile[0];
+        var fileReader = new FileReader();
+
+        fileReader.onload = async function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result;
+            console.log("ddd: "+srcData);
+            
+            var res = srcData.replace('data:', '').replace(/^.+,/, '');
+            
+            var data = {
+                name: document.getElementById('name').value,
+                shortDescription: document.getElementById('smallDescription').value,
+                description: document.getElementById('description').value,
+                image: res
+            };
+            //suprimmer base64 d'un string
+            console.log("ttt: "+data.image);
+            
+            axios.post(url, data);
+        }
+        fileReader.readAsDataURL(imageFile);
+
+        
+    }
 }
