@@ -1,12 +1,13 @@
 import {traitement,getDataForm} from './requet.js';
-import {createFiche} from './fiche.js';
+import {createFiche,afficheFiche} from './fiche.js';
 
 
 let urlW = window.location;
 let api = 'https://character-database.becode.xyz/characters';
 // split url
 var url = urlW.toString();
-var urlSplit = url.split("/");
+var urlSplit = url.split(/[/?]/);
+console.log("ici : "+urlSplit);
 if (urlSplit[3] == "") 
 {
     console.log("index");
@@ -22,7 +23,10 @@ else if (urlSplit[4] == "form.html")
 }
 else if (urlSplit[4] == "singleFiche.html")
 {
-    console.log("fiche");
+    console.log("single fiche");
+    var urlParams = new URLSearchParams(urlW.search);
+    var id = urlParams.get('id');
+    traitement(api + "/" + id, afficheFiche);
 
 }
 else 

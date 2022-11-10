@@ -11,10 +11,23 @@ export function createFiche(datas) {
                     ${data.shortDescription}
                 </p>
             </div>   
-            <a class= "list__item__button" href="./pages/single fiche.html?id=${data.id}">See character</a>
+            <a class= "list__item__button" href="./pages/singleFiche.html?id=${data.id}">See character</a>
         </li> 
         `;
         document.querySelector('.list').innerHTML += html;
     });
 }
 
+export function afficheFiche(data) {
+    let title = document.getElementsByClassName('fiche__item__title')[0];
+    let image = document.getElementsByClassName('fiche__item__image')[0];
+    let description = document.getElementsByClassName('fiche__item__description')[0];
+    let shortDescription = document.getElementsByClassName('fiche__item__shortDescription')[0];
+    console.log(data);
+    //create texte
+
+    title.appendChild(document.createTextNode(data.name));
+    description.appendChild(document.createTextNode(data.description));
+    shortDescription.appendChild(document.createTextNode(data.shortDescription));
+    image.src = "data:image/gif;base64," + data.image;
+}

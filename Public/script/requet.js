@@ -45,7 +45,5 @@ export function getDataForm(url) {
             axios.post(url, data);
         }
         fileReader.readAsDataURL(imageFile);
-
-        
     }
 }
