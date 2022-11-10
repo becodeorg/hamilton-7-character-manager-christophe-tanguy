@@ -140,6 +140,127 @@ body {
   text-align: left;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  align-items: flex-start;
+  font-size: large;
+  line-height: 30px;
+  width: 50px;
+}
+
+.fiche {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.fiche__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fiche__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #dde4ff;
+  max-width: 20em;
+  height: 43em;
+  width: 500px;
+  align-items: center;
+  padding: 1em;
+  font-family: "Poppins", sans-serif;
+  margin-top: 15px;
+  border-radius: 30px;
+}
+.fiche__item__image {
+  width: 10em;
+  height: 10em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+.fiche__item__title {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.fiche__item__shortDescription {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+.fiche__item__description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.fiche__item__button {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  height: 117px;
+}
+.fiche__item__button__update {
+  border-radius: 50px;
+  width: 150px;
+  height: 45px;
+  border: solid;
+  background-color: #06224a;
+  border-color: #06224a;
+  color: #dde4ff;
+  text-align: center;
+  text-decoration-line: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fiche__item__button__delete {
+  border-radius: 50px;
+  width: 150px;
+  height: 45px;
+  border: solid;
+  background-color: #dde4ff;
+  border-color: #06224a;
+  color: #06224a;
+  text-align: center;
+  text-decoration-line: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .fiche {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .fiche {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .fiche__item {
+    max-width: 30em;
+    height: 35em;
+  }
+  .fiche__item__title {
+    font-size: 2.5rem;
+  }
+  .fiche__item__description {
+    font-size: 1.5rem;
+  }
+}
+
 .edit {
   display: flex;
   flex-direction: column;
