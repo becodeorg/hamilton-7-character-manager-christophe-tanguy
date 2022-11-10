@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="../Public/CSS/style.css">
 </head>
 <body>
+   
     <form action="" class="edit">
         <!--uplode image-->
         <input type="file" name="image" id="image" class="edit__img">
         <!--name-->
         name
-        <input type="text" name="name" id="name" class="edit__img">
+        <input type="text" name="name" id="name" class="edit__name">
         <!--description-->
-        description
-        <input type="text" name="description" id="description" class="edit__img">
-        <!--small description-->
         small description
-        <input type="text" name="smallDescription" id="smallDescription" class="edit__img">
+        <input type="text" name="description" id="description" class="edit__small__description">
+        <!--small description-->
+        description
+        <input type="text" name="smallDescription" id="smallDescription" class="edit__description">
         <!--submit-->
-        submit
-        <input type="submit" value="submit" class="edit__img" id="button">
-
+       
+        <div class="button__form">
+            submit
+            <input type="submit" value="submit" class="edit__button__form__save" id="button">
+            <input type="submit" value="submit" class="edit__button__form__delete" id="button">
+        </div>
     </form>
     <script  type="module"   src="../Public/script/script.js" ></script>
 
