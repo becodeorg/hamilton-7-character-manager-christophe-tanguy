@@ -1,56 +1,62 @@
-
-export function createFiche(datas) {
-
+export function generateCart(datas)
+{
+    let url = window.location;
+    let nameSearch = new URLSearchParams(url.search).get('name');
     datas.forEach(data => {
-        let html = `
-        <li class="list__item">
-            <div class= "list__div">    
-                <img class="list__item__image" src="data:image/gif;base64,${data.image}" alt="">
-                <h2 class="list__item__title">${data.name}</h2>
-                <p class="list__item__description">
-                    ${data.shortDescription}
-                </p>
-            </div>   
-            <a class= "list__item__button" href="./pages/singleFiche.html?id=${data.id}">See character</a>
-        </li> 
-        `;
-        document.querySelector('.list').innerHTML += html;
+        if (data.name.toLowerCase().includes(nameSearch.toLowerCase()) || nameSearch == null) {
+            let html = `
+            <li class="list__item">
+                <div class= "list__div">    
+                    <img class="list__item__image" src="data:image/gif;base64,${data.image}" alt="">
+                    <h2 class="list__item__title">${data.name}</h2>
+                    <p class="list__item__description">
+                        ${data.shortDescription}
+                    </p>
+                </div>   
+                <a class= "list__item__button" href="./singleFiche.html?id=${data.id}">See character</a>
+            </li> 
+            `;
+            document.querySelector('.list').innerHTML += html;
+        }
     });
+
+    console.log(nameSearch);
 }
 
-export function afficheFiche(data) {
+export function generateFiche(data)
+{
+    // ----------------- récupére les conteneurs
     let title = document.getElementsByClassName('fiche__item__title')[0];
     let image = document.getElementsByClassName('fiche__item__image')[0];
     let description = document.getElementsByClassName('fiche__item__description')[0];
     let shortDescription = document.getElementsByClassName('fiche__item__shortDescription')[0];
     console.log(data);
-    //create texte
 
+    // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
     description.appendChild(document.createTextNode(data.description));
     shortDescription.appendChild(document.createTextNode(data.shortDescription));
     image.src = "data:image/gif;base64," + data.image;
 }
 
-export function setDataForm(data) {
-    let name = document.getElementById('name');
-    let smallDescription = document.getElementById('smallDescription');
-    let description = document.getElementById('description');
+export function generateForm(data)
+{
+    // ----------------- récupére les conteneurs
+    let title = document.getElementById('name');
     let image = document.getElementById('image');
+    let description = document.getElementById('description');
+    let shortDescription = document.getElementById('shortDescription');
 
-    name.value = data.name;
-    smallDescription.value = data.shortDescription;
+    // ----------------- remplis les conteneurs
+    title.value = data.name;
     description.value = data.description;
-    image.src = 'data:image/gif;base64,'+data.image;
-
-
-    console.log("non");
+    shortDescription.value = data.shortDescription;
+    image.src = "data:image/gif;base64," + data.image;
 }
 
 export function updateImage()
 {
     var selectedfile = document.getElementById("getimage").files;
-    console.log("event");
     if (selectedfile.length > 0) {
         var imageFile = selectedfile[0];
         var fileReader = new FileReader();
@@ -58,7 +64,6 @@ export function updateImage()
         var srcData = fileLoadedEvent.target.result;
         var newImage = document.getElementById('image');
         newImage.src = srcData;
-        console.log("event2");
         }
         fileReader.readAsDataURL(imageFile);
     }
