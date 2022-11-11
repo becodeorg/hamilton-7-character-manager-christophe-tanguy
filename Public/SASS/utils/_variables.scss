@@ -1,5 +1,12 @@
-$tablette: 768px;
-$desktop: 1920px;
+// ------ color
 $couleurMain: #edf0ff;
 $couleurFiche: #dde4ff;
 $couleurButton: #06224a;
+
+// ------ size
+$radius: 1em;
+
+// ------ break points
+$mobile: 412px;
+$tablette: 768px;
+$desktop: 1920px;

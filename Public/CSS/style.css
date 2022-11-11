@@ -233,56 +233,77 @@ body {
   justify-content: center;
 }
 
-.edit {
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #edf0ff;
-  height: 95vh;
-  font-size: 2.3em;
-}
-.edit__img {
-  display: flex;
-  width: 20em;
-  height: 10em;
-  font-size: 0.5em;
-  border-radius: 100%;
-  border-color: black;
-}
-.edit__name {
-  width: 20em;
-  height: 10em;
-  font-size: 0.5em;
-  background-color: #dde4ff;
-  border-radius: 30px;
-}
-.edit__small__description {
-  width: 20em;
-  height: 10em;
-  font-size: 0.5em;
-  background-color: #dde4ff;
-  border-radius: 30px;
-}
-.edit__description {
-  width: 20em;
-  height: 10em;
-  font-size: 0.5em;
-  background-color: #dde4ff;
-  border-radius: 30px;
-}
-.edit__button__form {
-  border-radius: 50px;
-  width: 40%;
-  height: 10%;
-  border: solid;
-  background-color: #06224a;
-  border-color: #06224a;
-  color: #edf0ff;
-  text-align: center;
-  text-decoration-line: none;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #dde4ff;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em;
+}
+.form__getimage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 2px solid #06224a;
+  width: 10em;
+  height: 10em;
+  background: #edf0ff;
+}
+.form__getimage:hover {
+  cursor: pointer;
+}
+.form__getimage__file {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 2px solid #06224a;
+  background: #edf0ff;
+  width: 1.5em;
+  height: 1.5em;
+  z-index: 2;
+}
+.form__getimage__txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  font-weight: 700;
+  color: transparent;
+  z-index: 1;
+}
+.form__getimage__txt:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #edf0ff;
+}
+.form__getimage__img {
+  position: absolute;
+  color: transparent;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+}
+.form__getimage__img[src=""] {
+  display: none;
+}
+.form__getimage__button {
+  display: none;
+}
+.form__input {
+  margin: 1em;
+  padding: 1em;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
