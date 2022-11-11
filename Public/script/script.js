@@ -1,5 +1,5 @@
 import {traitement,getDataForm,deleteFiche} from './requet.js';
-import {createFiche,afficheFiche} from './fiche.js';
+import {createFiche,afficheFiche,setDataForm} from './fiche.js';
 
 
 let urlW = window.location;
@@ -8,6 +8,10 @@ let api = 'https://character-database.becode.xyz/characters';
 var url = urlW.toString();
 var urlSplit = url.split(/[/?]/);
 console.log("ici : "+urlSplit);
+
+let urlParams = new URLSearchParams(urlW.search);
+let id = urlParams.get('id');
+
 if (urlSplit[3] == "" || urlSplit[3] == "index.html")
 {
     console.log("index");
@@ -16,16 +20,20 @@ if (urlSplit[3] == "" || urlSplit[3] == "index.html")
 else if (urlSplit[4] == "form.html")
 {
     console.log("form");
-    let button = document.querySelector('#button');
+    if (id != null)
+    {
+        traitement(api + "/" + id, setDataForm);
+        api = api + "/" + id;
+    }
+
+    let button = document.querySelector('#save');
     button.addEventListener('click', function() {
-        getDataForm(api);
+        getDataForm(api, id);
     });
 }
 else if (urlSplit[4] == "singleFiche.html")
 {
     console.log("single fiche");
-    let urlParams = new URLSearchParams(urlW.search);
-    let id = urlParams.get('id');
     traitement(api + "/" + id, afficheFiche);
 
     let deteltButton = document.getElementById('delete');
@@ -33,6 +41,10 @@ else if (urlSplit[4] == "singleFiche.html")
         deleteFiche(api + "/" + id);
     });
 
+    let editButton = document.getElementById('edit');
+    editButton.addEventListener('click', function() {
+        window.location.href = "./form.html?id=" + id;
+    });
 }
 else 
 {

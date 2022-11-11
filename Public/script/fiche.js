@@ -31,3 +31,17 @@ export function afficheFiche(data) {
     shortDescription.appendChild(document.createTextNode(data.shortDescription));
     image.src = "data:image/gif;base64," + data.image;
 }
+
+export function setDataForm(data) {
+    let name = document.getElementById('name');
+    let smallDescription = document.getElementById('smallDescription');
+    let description = document.getElementById('description');
+    let image = document.getElementById('image');
+
+    name.value = data.name;
+    smallDescription.value = data.shortDescription;
+    description.value = data.description;
+    image.value = data.image;
+
+    console.log("non");
+}

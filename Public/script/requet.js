@@ -17,7 +17,7 @@ export async function traitement(url,method)
     })
 }
 
-export function getDataForm(url) {
+export function getDataForm(url,id) {
 
     var selectedfile = document.getElementById("image").files;
     var txt;
@@ -42,7 +42,14 @@ export function getDataForm(url) {
             //suprimmer base64 d'un string
             console.log("ttt: "+data.image);
             
-            axios.post(url, data);
+            if (id != null)
+            {
+                axios.put(url, data)
+            }
+            else
+            {
+                axios.post(url, data);
+            }
         }
         fileReader.readAsDataURL(imageFile);
     }
