@@ -47,3 +47,8 @@ export function getDataForm(url) {
         fileReader.readAsDataURL(imageFile);
     }
 }
+
+export async function deleteFiche(url) {
+    await axios.delete(url);
+    window.location.href = "../index.html";
+}

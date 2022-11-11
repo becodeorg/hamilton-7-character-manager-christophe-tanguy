@@ -1,4 +1,4 @@
-import {traitement,getDataForm} from './requet.js';
+import {traitement,getDataForm,deleteFiche} from './requet.js';
 import {createFiche,afficheFiche} from './fiche.js';
 
 
@@ -8,7 +8,7 @@ let api = 'https://character-database.becode.xyz/characters';
 var url = urlW.toString();
 var urlSplit = url.split(/[/?]/);
 console.log("ici : "+urlSplit);
-if (urlSplit[3] == "") 
+if (urlSplit[3] == "" || urlSplit[3] == "index.html")
 {
     console.log("index");
     traitement(api, createFiche);
@@ -24,9 +24,14 @@ else if (urlSplit[4] == "form.html")
 else if (urlSplit[4] == "singleFiche.html")
 {
     console.log("single fiche");
-    var urlParams = new URLSearchParams(urlW.search);
-    var id = urlParams.get('id');
+    let urlParams = new URLSearchParams(urlW.search);
+    let id = urlParams.get('id');
     traitement(api + "/" + id, afficheFiche);
+
+    let deteltButton = document.getElementById('delete');
+    deteltButton.addEventListener('click', function() {
+        deleteFiche(api + "/" + id);
+    });
 
 }
 else 
