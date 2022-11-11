@@ -41,7 +41,27 @@ export function setDataForm(data) {
     name.value = data.name;
     smallDescription.value = data.shortDescription;
     description.value = data.description;
-    image.value = data.image;
+    image.src = 'data:image/gif;base64,'+data.image;
+
 
     console.log("non");
+}
+
+export function updateImage()
+{
+    var selectedfile = document.getElementById("getimage").files;
+    console.log("event");
+    if (selectedfile.length > 0) {
+        var imageFile = selectedfile[0];
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result;
+        var newImage = document.getElementById('image');
+        newImage.src = srcData;
+        console.log("event2");
+        // document.getElementById("dummy").innerHTML = newImage.outerHTML;
+        // document.getElementById("txt").value = document.getElementById("dummy").innerHTML;
+        }
+        fileReader.readAsDataURL(imageFile);
+    }
 }

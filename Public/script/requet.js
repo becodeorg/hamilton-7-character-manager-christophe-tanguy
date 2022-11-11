@@ -55,6 +55,8 @@ export function getDataForm(url,id) {
     }
 }
 
+
+
 export async function deleteFiche(url) {
     await axios.delete(url);
     window.location.href = "../index.html";

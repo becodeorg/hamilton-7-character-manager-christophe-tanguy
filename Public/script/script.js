@@ -1,5 +1,5 @@
 import {traitement,getDataForm,deleteFiche} from './requet.js';
-import {createFiche,afficheFiche,setDataForm} from './fiche.js';
+import {createFiche,afficheFiche,setDataForm,updateImage} from './fiche.js';
 
 
 let urlW = window.location;
@@ -28,8 +28,12 @@ else if (urlSplit[4] == "form.html")
 
     let button = document.querySelector('#save');
     button.addEventListener('click', function() {
-        getDataForm(api, id);
+        // getDataForm(api, id);
+        updateImage();
     });
+
+    let change = document.getElementById('getimage');
+    change.addEventListener('change', (updateImage));
 }
 else if (urlSplit[4] == "singleFiche.html")
 {
