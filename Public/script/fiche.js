@@ -59,8 +59,6 @@ export function updateImage()
         var newImage = document.getElementById('image');
         newImage.src = srcData;
         console.log("event2");
-        // document.getElementById("dummy").innerHTML = newImage.outerHTML;
-        // document.getElementById("txt").value = document.getElementById("dummy").innerHTML;
         }
         fileReader.readAsDataURL(imageFile);
     }

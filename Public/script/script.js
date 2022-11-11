@@ -28,8 +28,7 @@ else if (urlSplit[4] == "form.html")
 
     let button = document.querySelector('#save');
     button.addEventListener('click', function() {
-        // getDataForm(api, id);
-        updateImage();
+        getDataForm(api, id);
     });
 
     let change = document.getElementById('getimage');
