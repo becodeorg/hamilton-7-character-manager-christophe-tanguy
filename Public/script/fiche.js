@@ -1,26 +1,38 @@
-export function generateCart(datas)
+import * as myError from './error.js';
+
+export function generateCart(data)
 {
-    let url = window.location;
-    let nameSearch = new URLSearchParams(url.search).get('name');
-    datas.forEach(data => {
-        if (data.name.toLowerCase().includes(nameSearch.toLowerCase()) || nameSearch == null) {
+    const nbCart = 32;
+    let nameSearch = myError.getValueURL(`name`, ``);
+    if (nameSearch != ``)
+    {
+        nameSearch = nameSearch.toLowerCase();
+    }
+    let page = (myError.getValueURL(`page`, 1)-1)*nbCart;
+    
+    for (let i = 0; i<nbCart && page+i < data.length; i++)
+    {
+        if (data[page+i].name.toLowerCase().includes(nameSearch)) {
             let html = `
             <li class="list__item">
                 <div class= "list__div">    
-                    <img class="list__item__image" src="data:image/gif;base64,${data.image}" alt="">
-                    <h2 class="list__item__title">${data.name}</h2>
+                    <img class="list__item__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
+                    <h2 class="list__item__title">${data[page+i].name}</h2>
                     <p class="list__item__description">
-                        ${data.shortDescription}
+                        ${data[page+i].shortDescription}
                     </p>
                 </div>   
-                <a class= "list__item__button" href="./singleFiche.html?id=${data.id}">See character</a>
+                <a class= "list__item__button" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
             </li> 
             `;
             document.querySelector('.list').innerHTML += html;
         }
-    });
+        else
+        {
+            i--;
+        }
+    };
 
-    console.log(nameSearch);
 }
 
 export function generateFiche(data)

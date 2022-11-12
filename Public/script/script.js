@@ -1,5 +1,6 @@
 import * as request from './requet.js';
 import * as display from './fiche.js';
+import * as myError from './error.js';
 
 let api = 'https://character-database.becode.xyz/characters';
 
@@ -8,14 +9,15 @@ let url = window.location;
 let page = url.toString().replace(/[?].{1,}/, "").split('/');
 // console.log("value url: "+page);
 
-let id = new URLSearchParams(url.search).get('id');
+let id = myError.getValueURL(`id`, ``);
+
 // console.log("value id: "+id);
 
 // ----------- vérification de la page
 switch (page[page.length-1]) {
 // si la page est la page list
     case 'list.html':
-        console.log("index");
+        console.log("list");
         // requet.traitement(api, fiche.createListe);
         request.request(api, 'get', null, display.generateCart);
 
