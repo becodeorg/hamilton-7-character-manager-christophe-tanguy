@@ -15,29 +15,11 @@
             </form>
         </header>
         <ul class="list">
-            <li class="list__item">
-                <div class= "list__item__data">    
-                    <img class="list__item__data__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
-                    <h2 class="list__item__data__title">${data[page+i].name}</h2>
-                    <p class="list__item__data__shortDescription">
-                        ${data[page+i].shortDescription}
-                    </p>
-                </div>   
-                <a class= "list__item__button" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
-            </li> 
-            <li class="list__item">
-                <div class= "list__item__data">    
-                    <img class="list__item__data__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
-                    <h2 class="list__item__data__title">${data[page+i].name}</h2>
-                    <p class="list__item__data__shortDescription">
-                        ${data[page+i].shortDescription}
-                    </p>
-                </div>   
-                <a class= "list__item__button" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
-            </li> 
         </ul>
+        <nav class="nav">
+        </nav>
 
-        <a class="button" href="./form.html">Add a new character to the collection</a>
+        <a class="button--full" href="./form.html">Add a new character to the collection</a>
     
         <script  type="module"   src="../Public/script/script.js" ></script>
 

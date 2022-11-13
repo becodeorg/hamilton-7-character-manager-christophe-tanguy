@@ -2,7 +2,7 @@ import * as myError from './error.js';
 
 export function generateCart(data)
 {
-    const nbCart = 32;
+    const nbCart = 8;
     let nameSearch = myError.getValueURL(`name`, ``);
     if (nameSearch != ``)
     {
@@ -15,14 +15,14 @@ export function generateCart(data)
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
             let html = `
             <li class="list__item">
-                <div class= "list__data">    
+                <div class= "list__item__data">    
                     <img class="list__item__data__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
                     <h2 class="list__item__data__title">${data[page+i].name}</h2>
                     <p class="list__item__data__shortDescription">
                         ${data[page+i].shortDescription}
                     </p>
                 </div>   
-                <a class= "list__item__button" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
+                <a class= "button--full" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
             </li> 
             `;
             document.querySelector('.list').innerHTML += html;
@@ -32,6 +32,8 @@ export function generateCart(data)
             i--;
         }
     };
+
+    genaratePagination(data, nameSearch,page/nbCart+1);
 
 }
 
@@ -79,4 +81,64 @@ export function updateImage()
         }
         fileReader.readAsDataURL(imageFile);
     }
+}
+
+function genaratePagination(data, search, pgcurent)
+{
+    
+    let nbpage = getNbPage(data, search);
+
+    // ----------------- génère les boutons
+    if(pgcurent > 1)
+    {
+        addPage(search, `<<`,pgcurent-1);
+    }
+    addPage(search, `1`,1);
+    for (let i = 1; i < nbpage-1; i++)
+    {
+        if (i == 1)
+        {
+            addPage(search, `...`,i+1);
+            i = nbpage;
+        }
+        else
+        {
+            addPage(search, i+1,i+1);
+        }
+    }
+    addPage(search, nbpage,nbpage);
+    if(pgcurent < nbpage)
+        {
+            addPage(search, `>>`,pgcurent+1);
+        }
+}
+
+function getNbPage(data, search)
+{
+    let nbpage = 1;
+    // ----------------- donne le nombre de page
+    if (search != ``)
+    {
+        data.forEach(element => {
+            if (element.name.toLowerCase().includes(search)) {
+                nbpage++;
+            }
+        });
+
+        nbpage = Math.ceil(nbpage/8);
+    }
+    else
+    {
+        nbpage = Math.ceil(data.length/8);
+    }
+    return nbpage;
+}
+
+function addPage(search,txt, page)
+{
+    let html = 
+        `
+            <a class="button--nav" href="./list.html?$search=${search}&page=${page}">${txt}</a>
+        `;
+        document.getElementsByClassName(`nav`)[0].innerHTML += html;
 }
