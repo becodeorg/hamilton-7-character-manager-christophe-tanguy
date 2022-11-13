@@ -51,7 +51,8 @@ switch (page[page.length-1]) {
     case 'form.html':
         console.log("form");
         let method = 'post';
-        if (id != null) {
+        if (id != ``) {
+            console.log("edit : " + id);
             api = api + '/' + id;
             request.request(api, 'get', null, display.generateForm);
             method = 'put';
