@@ -1,116 +1,52 @@
-body
-{
-    background-color: variables.$couleurMain;
-}
-
 .list
 {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-
-   &__div
-   {
     display: flex;
-   align-items: center;
-   flex-direction: column;
-   }
-   
-   
+    flex-direction: column;
+    align-items: center;
+
+    // margin: variables.$borderSceen;
     &__item
     {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        background-color: variables.$couleurFiche;
+        align-items: center;
+        justify-content: center;
+
         max-width: 20em;
         width: 20em;
-        height: 30em;
-        width: 500px;
-        align-items: center;
-        padding: 1em;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 15px;
-        border-radius: 30px;
-        
+        margin-top: 1em;
+        padding: 0.5em;
 
-        &__image
-        {
-            width: 10em;
-            height: 10em;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            border-radius: 50%;
-        }
+        background-color: variables.$couleurFiche;
 
-        &__title
+        border-radius: variables.$radius;
+        &__data
         {
-            margin-bottom: 15px;
-            font-size: 2rem;
-        }
-
-        &__description
-        {
-            font-size: 1rem;
-            align-items: left;
-            margin-bottom: 15px;
-        }
-
-        &__button
-        {
-            border-radius: 50px;
-            width: 40%;
-            height: 10%;
-            border: solid;
-            background-color: variables.$couleurButton;
-            border-color: variables.$couleurButton;
-            color: #edf0ff;
-            text-align: center;
-            text-decoration-line: none;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-        }
-    }
+            &__image
+            {
+                width: 10em;
+                height: 10em;
 
-    //Format tablette
+                background-color: variables.$couleurMain;
 
-    @media only screen and (min-width: variables.$tablette)
-    
-        {   flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-
-    //Format desktop
-
-    @media only screen and (min-width: variables.$desktop) 
-    
-    {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
-
-        &__item
-        {
-           max-width: 30em;
-            height: 35em;
-        
+                border-radius: 100%;
+            }
 
             &__title
             {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin: 0.5em 0;
             }
 
-            &__description
+            &__shortDescription
             {
-                font-size: 1.5rem;
+                font-size: 1rem;
+                align-items: left;
             }
         }
     }
-
 }

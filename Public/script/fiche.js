@@ -15,10 +15,10 @@ export function generateCart(data)
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
             let html = `
             <li class="list__item">
-                <div class= "list__div">    
-                    <img class="list__item__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
-                    <h2 class="list__item__title">${data[page+i].name}</h2>
-                    <p class="list__item__description">
+                <div class= "list__data">    
+                    <img class="list__item__data__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
+                    <h2 class="list__item__data__title">${data[page+i].name}</h2>
+                    <p class="list__item__data__shortDescription">
                         ${data[page+i].shortDescription}
                     </p>
                 </div>   

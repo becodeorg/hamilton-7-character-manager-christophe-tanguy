@@ -34,90 +34,42 @@ body {
   }
 }
 
-body {
-  background-color: #edf0ff;
-}
-
 .list {
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-.list__div {
-  display: flex;
   align-items: center;
-  flex-direction: column;
 }
 .list__item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #dde4ff;
+  align-items: center;
+  justify-content: center;
   max-width: 20em;
   width: 20em;
-  height: 30em;
-  width: 500px;
-  align-items: center;
-  padding: 1em;
-  font-family: "Poppins", sans-serif;
-  margin-top: 15px;
-  border-radius: 30px;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: #dde4ff;
+  border-radius: 1em;
 }
-.list__item__image {
-  width: 10em;
-  height: 10em;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 50%;
-}
-.list__item__title {
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-.list__item__description {
-  font-size: 1rem;
-  align-items: left;
-  margin-bottom: 15px;
-}
-.list__item__button {
-  border-radius: 50px;
-  width: 40%;
-  height: 10%;
-  border: solid;
-  background-color: #06224a;
-  border-color: #06224a;
-  color: #edf0ff;
-  text-align: center;
-  text-decoration-line: none;
+.list__item__data {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-@media only screen and (min-width: 768px) {
-  .list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+.list__item__data__image {
+  width: 10em;
+  height: 10em;
+  background-color: #edf0ff;
+  border-radius: 100%;
 }
-@media only screen and (min-width: 1920px) {
-  .list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .list__item {
-    max-width: 30em;
-    height: 35em;
-  }
-  .list__item__title {
-    font-size: 2.5rem;
-  }
-  .list__item__description {
-    font-size: 1.5rem;
-  }
+.list__item__data__title {
+  font-size: 2rem;
+  margin: 0.5em 0;
+}
+.list__item__data__shortDescription {
+  font-size: 1rem;
+  align-items: left;
 }
 
 .header {
