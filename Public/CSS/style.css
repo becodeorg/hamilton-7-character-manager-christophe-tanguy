@@ -20,6 +20,7 @@ body {
   border: 1px solid #06224a;
   border-radius: 2em;
   padding: 0 1em;
+  font-size: 1rem;
   text-align: center;
   text-decoration-line: none;
 }
@@ -36,6 +37,12 @@ body {
   padding: 0;
   margin: 0 0.5em;
   border-radius: 100%;
+}
+@media only screen and (min-width: 1920px) {
+  .button, .button--empty, .button--full, .button--nav {
+    height: 3em;
+    font-size: 1.5rem;
+  }
 }
 
 .nav {
@@ -114,97 +121,83 @@ body {
   text-align: left;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding-left: 20px;
-  align-items: flex-start;
-  font-size: large;
-  line-height: 30px;
-  width: 50px;
-}
-
 .fiche {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-}
-.fiche__div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.fiche__item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #dde4ff;
-  height: 43em;
-  align-items: center;
+  margin: 1em;
   padding: 1em;
-  font-family: "Poppins", sans-serif;
-  margin-top: 15px;
-  border-radius: 30px;
+  background-color: #dde4ff;
+  border-radius: 1em;
 }
-.fiche__item__image {
+.fiche__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fiche__data__image {
   width: 10em;
   height: 10em;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 50%;
+  margin: 1em 0;
+  background-color: #edf0ff;
+  border-radius: 100%;
 }
-.fiche__item__title {
-  margin-bottom: 10px;
-  font-size: 2rem;
+.fiche__data__txt__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-.fiche__item__shortDescription {
+.fiche__data__txt__shortDescription {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.fiche__data__txt__description {
   font-size: 1rem;
-  margin-bottom: 40px;
-  text-align: justify;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
-.fiche__item__description {
-  font-size: 1rem;
-  margin-bottom: 10px;
+@media only screen and (min-width: 768px) {
+  .fiche__data {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .fiche__data__image {
+    margin: 0 1em;
+  }
+  .fiche__data__txt__title {
+    font-size: 2rem;
+  }
+  .fiche__data__txt__shortDescription {
+    font-size: 1.5rem;
+  }
+  .fiche__data__txt__description {
+    font-size: 1.25rem;
+  }
+  .fiche__buttonDiv {
+    display: flex;
+    width: 30em;
+    margin: 2em 0;
+  }
 }
-.fiche__item__button {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  margin-top: 35px;
-  margin-bottom: 25px;
-  height: 117px;
-}
-.fiche__item__button__update {
-  border-radius: 50px;
-  width: 150px;
-  height: 45px;
-  border: solid;
-  background-color: #06224a;
-  border-color: #06224a;
-  color: #dde4ff;
-  text-align: center;
-  text-decoration-line: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fiche__item__button__delete {
-  border-radius: 50px;
-  width: 150px;
-  height: 45px;
-  border: solid;
-  background-color: #dde4ff;
-  border-color: #06224a;
-  color: #06224a;
-  text-align: center;
-  text-decoration-line: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media only screen and (min-width: 1920px) {
+  .fiche__data__image {
+    margin: 0 1em;
+    width: 20em;
+    height: 20em;
+  }
+  .fiche__data__txt__title {
+    font-size: 2.5rem;
+  }
+  .fiche__data__txt__shortDescription {
+    font-size: 2rem;
+  }
+  .fiche__data__txt__description {
+    font-size: 1.5rem;
+  }
+  .fiche__buttonDiv {
+    width: 40em;
+  }
 }
 
 .form {

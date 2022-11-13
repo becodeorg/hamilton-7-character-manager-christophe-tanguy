@@ -1,0 +1,11 @@
+@use "./variables" as variables;
+@mixin imageFormat
+{
+    width: 10em;
+    height: 10em;
+    margin: variables.$borderSceen 0;
+
+    background-color: variables.$couleurMain;
+
+    border-radius: 100%;
+}

@@ -11,6 +11,7 @@
     border-radius: variables.$radiusButton;
     padding: 0 1em;
 
+    font-size: 1rem;
     text-align: center;
     text-decoration-line: none;
 
@@ -35,5 +36,11 @@
         padding: 0;
         margin: 0 0.5em;
         border-radius: 100%;
+    }
+
+    @media only screen and (min-width: variables.$desktop) 
+    {
+        height: 3em;
+        font-size: 1.5rem;
     }
 }

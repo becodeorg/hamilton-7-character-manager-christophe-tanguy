@@ -1,161 +1,113 @@
-.header
-    {
-        display: flex;
-        flex-direction: column;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        padding-left: 20px;
-        align-items: flex-start;
-        font-size: large;
-        line-height: 30px;
-        width: 50px;
-    }
+.fiche
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: variables.$borderSceen;
+    padding: variables.$borderSceen;
 
-    .fiche
+    background-color: variables.$couleurFiche;
+
+    border-radius: variables.$radius;
+    &__data
     {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
 
-    &__div
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-     }
-    
-    
-        &__item
+        &__image
         {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: variables.$couleurFiche;
-            // max-width: 20em;
-            height: 43em;
-            // width: 500px;
-            align-items: center;
-            padding: 1em;
-            font-family: 'Poppins', sans-serif;
-            margin-top: 15px;
-            border-radius: 30px;
-
-            
-            
-
-            &__image
-            {
-                width: 10em;
-                height: 10em;
-                margin-top: 15px;
-                margin-bottom: 15px;
-                border-radius: 50%;
-            }
-
+            @include mixims.imageFormat;
+        }
+        &__txt
+        {
             &__title
             {
-                margin-bottom: 10px;
-                font-size: 2rem;    
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
             }
-
             &__shortDescription
             {
-                font-size: 1rem;
-                margin-bottom: 40px;
-                text-align: justify;  
+                font-size: 1.25rem;
+                font-weight: 400;
+                margin-bottom: 1rem;
             }
-
             &__description
             {
                 font-size: 1rem;
-                margin-bottom: 10px;
-            }
-
-            &__button
-            {
-                display: flex;
-                justify-content: space-evenly;
-                flex-direction: column;
-                margin-top: 35px;
-                margin-bottom: 25px;
-                height: 117px;
-
-
-                    &__update
-                    {
-                        border-radius: 50px;
-                        width: 150px;
-                        height: 45px;
-                        border: solid;
-                        background-color: variables.$couleurButton;
-                        border-color: variables.$couleurButton;
-                        color: variables.$couleurFiche;
-                        text-align: center;
-                        text-decoration-line: none;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-
-                    &__delete
-                    {
-                        border-radius: 50px;
-                        width: 150px;
-                        height: 45px;
-                        border: solid;
-                        background-color: variables.$couleurFiche;
-                        border-color: variables.$couleurButton;
-                        color: variables.$couleurButton;
-                        text-align: center;
-                        text-decoration-line: none;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                
+                font-weight: 400;
+                margin-bottom: 1rem;
             }
         }
-            //Format tablette
-
-        //     @media only screen and (min-width: variables.$tablette)
-            
-        //     {   flex-direction: row;
-        //         flex-wrap: wrap;
-        //         justify-content: space-evenly;
-        //         align-items: center;
-        //     }
-
-
-        //     //Format desktop
-
-        //     @media only screen and (min-width: variables.$desktop) 
-                
-        //     {
-        //         flex-direction: row;
-        //         flex-wrap: wrap;
-        //         justify-content: space-evenly;
-        //         align-items: center;
-
-        //         &__item
-        //         {
-        //             max-width: 30em;
-        //             height: 35em;
-                        
-
-        //         &__title
-        //         {
-        //             font-size: 2.5rem;
-        //         }
-
-        //         &__description
-        //         {
-        //             font-size: 1.5rem;
-        //         }
-        //     }
-        // }
-
     }
 
-    
+    @media only screen and (min-width: variables.$tablette)
+    {
+        // justify-content: space-between;
+        // align-items: flex-start;
+        &__data
+        {
+            flex-direction: row;
+            align-items: flex-start;
+
+            &__image
+            {
+                margin: 0 variables.$borderSceen;
+            }
+            &__txt
+            {
+                &__title
+                {
+                    font-size: 2rem;
+                }
+                &__shortDescription
+                {
+                    font-size: 1.5rem;
+                }
+                &__description
+                {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+        &__buttonDiv
+        {
+            display: flex;
+            // justify-content: space-evenly;
+            width: 30em;
+            margin: 2em 0;
+        }
+    }
+    @media only screen and (min-width: variables.$desktop) 
+    {
+        &__data
+        {
+            &__image
+            {
+                margin: 0 variables.$borderSceen;
+                width: 20em;
+                height: 20em;
+            }
+            &__txt
+            {
+                &__title
+                {
+                    font-size: 2.5rem;
+                }
+                &__shortDescription
+                {
+                    font-size: 2rem;
+                }
+                &__description
+                {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        &__buttonDiv
+        {
+            width: 40em;
+        }
+    }
+}
