@@ -23,6 +23,7 @@ switch (page[page.length-1]) {
 
         let search = document.getElementById('search');
         search.addEventListener('search', function() {
+            window.location.href = `./list.html?name=${search.value}`;
             console.log("search");
         });
 
@@ -52,7 +53,7 @@ switch (page[page.length-1]) {
         console.log("form");
         let method = 'post';
         if (id != ``) {
-            console.log("edit : " + id);
+            // console.log("edit : " + id);
             api = api + '/' + id;
             request.request(api, 'get', null, display.generateForm);
             method = 'put';

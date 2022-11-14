@@ -8,11 +8,14 @@ export function generateCart(data)
     {
         nameSearch = nameSearch.toLowerCase();
     }
+
     let page = (myError.getValueURL(`page`, 1)-1)*nbCart;
     
-    for (let i = 0; i<nbCart && page+i < data.length; i++)
+    for (let i = 0,j = 0; j<nbCart && page+i < data.length; i++)
     {
+        console.log(data[page+i].name);
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
+            console.log("oui");
             let html = `
             <li class="list__item">
                 <div class= "list__item__data">    
@@ -26,10 +29,7 @@ export function generateCart(data)
             </li> 
             `;
             document.querySelector('.list').innerHTML += html;
-        }
-        else
-        {
-            i--;
+            j++;
         }
     };
 
