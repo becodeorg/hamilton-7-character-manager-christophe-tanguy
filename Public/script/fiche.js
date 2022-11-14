@@ -2,7 +2,7 @@ import * as myError from './error.js';
 
 export function generateCart(data)
 {
-    const nbCart = 8;
+    const nbCart = 2;
     let nameSearch = myError.getValueURL(`name`, ``);
     if (nameSearch != ``)
     {
@@ -13,7 +13,6 @@ export function generateCart(data)
     
     for (let i = 0,j = 0; j<nbCart && page+i < data.length; i++)
     {
-        console.log(data[page+i].name);
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
             console.log("oui");
             let html = `
@@ -97,7 +96,7 @@ function genaratePagination(data, search, pgcurent)
 {
     
     let nbpage = getNbPage(data, search);
-
+    --pgcurent;
     // ----------------- génère les boutons
     if(pgcurent > 1)
     {
@@ -106,15 +105,38 @@ function genaratePagination(data, search, pgcurent)
     addPage(search, `1`,1);
     for (let i = 1; i < nbpage-1; i++)
     {
-        if (i == 1)
+
+        if (i == pgcurent-1 || i == pgcurent || i == pgcurent+1)
+        {
+            addPage(search, `${i+1}`,i+1);
+        }
+        else if (i == pgcurent-2 || i == pgcurent+2)
         {
             addPage(search, `...`,i+1);
-            i = nbpage;
         }
-        else
-        {
-            addPage(search, i+1,i+1);
-        }
+    
+        // if (i == 2 && nbpage > 5)
+        // {
+        //     if (pgcurent == i)
+        //     {
+        //         addPage(search, i+1,i+1);
+        //     }
+        //     else
+        //     {
+        //         addPage(search, `...`,i+1);
+        //     }
+        // }
+        // else
+        // {
+        //     addPage(search, `...`,'pgcurent+1');
+        // }
+        //     addPage(search, `...`,i+1);
+        //     i = nbpage;
+        // }
+        // else
+        // {
+        //     addPage(search, i+1,i+1);
+        // }
     }
     addPage(search, nbpage,nbpage);
     if(pgcurent < nbpage)
@@ -135,11 +157,11 @@ function getNbPage(data, search)
             }
         });
 
-        nbpage = Math.ceil(nbpage/8);
+        nbpage = Math.ceil(nbpage/2);
     }
     else
     {
-        nbpage = Math.ceil(data.length/8);
+        nbpage = Math.ceil(data.length/2);
     }
     return nbpage;
 }
