@@ -2,7 +2,7 @@ import * as myError from './error.js';
 
 export function generateCart(data)
 {
-    const nbCart = 2;
+    const nbCart = 8;
     let nameSearch = myError.getValueURL(`name`, ``);
     if (nameSearch != ``)
     {
@@ -10,12 +10,11 @@ export function generateCart(data)
     }
 
     let page = (myError.getValueURL(`page`, 1)-1)*nbCart;
-    
+    let html = ``;
     for (let i = 0,j = 0; j<nbCart && page+i < data.length; i++)
     {
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
-            console.log("oui");
-            let html = `
+            html += `
             <li class="list__item">
                 <div class= "list__item__data">    
                     <img class="list__item__data__image" src="data:image/gif;base64,${data[page+i].image}" alt="">
@@ -27,10 +26,11 @@ export function generateCart(data)
                 <a class= "button--full" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
             </li> 
             `;
-            document.querySelector('.list').innerHTML += html;
+            
             j++;
         }
     };
+    document.querySelector('.list').innerHTML = html;
 
     genaratePagination(data, nameSearch,page/nbCart+1);
 
@@ -98,7 +98,7 @@ function genaratePagination(data, search, pgcurent)
     let nbpage = getNbPage(data, search);
     --pgcurent;
     // ----------------- génère les boutons
-    if(pgcurent > 1)
+    if(pgcurent > 0)
     {
         addPage(search, `<<`,pgcurent-1);
     }
@@ -114,32 +114,9 @@ function genaratePagination(data, search, pgcurent)
         {
             addPage(search, `...`,i+1);
         }
-    
-        // if (i == 2 && nbpage > 5)
-        // {
-        //     if (pgcurent == i)
-        //     {
-        //         addPage(search, i+1,i+1);
-        //     }
-        //     else
-        //     {
-        //         addPage(search, `...`,i+1);
-        //     }
-        // }
-        // else
-        // {
-        //     addPage(search, `...`,'pgcurent+1');
-        // }
-        //     addPage(search, `...`,i+1);
-        //     i = nbpage;
-        // }
-        // else
-        // {
-        //     addPage(search, i+1,i+1);
-        // }
     }
     addPage(search, nbpage,nbpage);
-    if(pgcurent < nbpage)
+    if(pgcurent < nbpage-1)
         {
             addPage(search, `>>`,pgcurent+1);
         }
@@ -157,11 +134,11 @@ function getNbPage(data, search)
             }
         });
 
-        nbpage = Math.ceil(nbpage/2);
+        nbpage = Math.ceil(nbpage/8);
     }
     else
     {
-        nbpage = Math.ceil(data.length/2);
+        nbpage = Math.ceil(data.length/8);
     }
     return nbpage;
 }
