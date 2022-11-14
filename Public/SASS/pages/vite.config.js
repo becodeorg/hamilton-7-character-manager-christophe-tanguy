@@ -6,9 +6,9 @@ module.exports = defineConfig({
         rollupOptions: {
             input: {
                 main: "./index.html",
-                new: "./form.html",
-                view: "./list.html",
-                edit: "./singleFiche.html"
+                new: "./pages/form.html",
+                view: "./pages/list.html",
+                edit: "./pages/singleFiche.html"
             }
         }
     }
