@@ -5,7 +5,7 @@ module.exports = defineConfig({
     build: {
         rollupOptions: {
             input: {
-                main: "./indexedDB.html",
+                main: "./index.html",
                 new: "./form.html",
                 view: "./list.html",
                 edit: "./singleFiche.html"
