@@ -62,7 +62,7 @@ export function generateForm(data)
 
     // ----------------- remplis les conteneurs
     title.value = data.name;
-    description.value = data.description;
+    // description.value = data.description;
     shortDescription.value = data.shortDescription;
     image.src = "data:image/gif;base64," + data.image;
 }
