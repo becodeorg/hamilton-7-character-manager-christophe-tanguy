@@ -84,6 +84,7 @@
         &__button
         {
             display:none;
+            
         }
     }
 
@@ -117,6 +118,18 @@
             width: 30em;
             margin: 2em 0;
         }
+    }
+    
+    @media only screen and (min-width: variables.$desktop) 
+    {
+        
+        
+        &__button
+        {
+            width: 40em;
+                
+        }
+        
     }
 }
 
