@@ -4,8 +4,19 @@
 
 // base
 @import "./base/typographie";
+@import "./base/reset.scss";
 
 // components
+@import "./components/button.scss";
+@import "./components/nav.scss";
+@import "./components/load.scss";
+
 // layout
+@import "./layout/fiche";
+@import "./layout/header";
+@import "./layout/singleFiche.scss";
+
 // pages
-// vendors
+@import "./pages/form"
+
+// vendors 

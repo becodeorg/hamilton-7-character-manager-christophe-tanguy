@@ -5,8 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../Public/CSS/style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.css">
+  <script type="text/javascript" src="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.umd.min.js"></script>
 </head>
 <body>
-    
+   
+    <form action="" class="form">
+        <!--uplode image-->
+        
+        <label for="getimage" class="form__getimage">
+            <!-- <i class="fa-solid fa-file-circle-plus fa-2xl" style="background: red;"></i> -->
+            <div class="fa-xl form__getimage__file"><i class="fa-solid fa-file-circle-plus" data-fa-transform="shrink-8"></i></div>
+            <img src="" alt="image profile" id="image" class="form__getimage__img">
+            <p class="form__getimage__txt">add image</p> 
+            <input type="file" name="getimage" id="getimage" class="form__getimage__button">
+        </label>
+        
+        <!--name-->
+        <Label class="form__label" for="name">Name</Label>
+        <input type="text" name="name" id="name" class="form__input">
+        <!--short description-->
+        <label class="form__label" for="shortDescription"> Short Description</label>
+        <input type="text" name="shortDescription" id="shortDescription" class="form__input">
+        <!--description-->
+        <label class="form__label" for="description">Description</label> 
+        <!-- <input type="text" name="description" id="description" class="form__input"> -->
+        <input id="x description" value="" type="hidden" name="content">
+        <trix-editor input="x" class="trix-content"></trix-editor>
+        <!--submit-->
+
+        
+       
+        <div class="form__button">
+            <!-- <div></div> -->
+            <!-- <button type="#" class="button--full" id="save">save</button> -->
+            <div class="button--full" id="save">save</div>
+            <!-- <input type="submit" value="save" class="button--full" id="save"> -->
+           <!--  <input type="submit" value="delet" class="edit__button__form__delete" id="button"> -->
+        </div>
+    </form>
+    <script src="https://kit.fontawesome.com/0c80942a4e.js" crossorigin="anonymous"></script>
+    <script  type="module"   src="../Public/script/script.js" ></script>
+
 </body>
 </html>
+
+<!-- https://github.com/basecamp/trix -->
