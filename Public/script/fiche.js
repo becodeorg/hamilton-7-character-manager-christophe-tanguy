@@ -23,7 +23,7 @@ export function generateCart(data)
                         ${data[page+i].shortDescription}
                     </p>
                 </div>   
-                <a class= "button--full" href="../singleFiche.html?id=${data[page+i].id}">See character</a>
+                <a class= "button--full" href="./singleFiche.html?id=${data[page+i].id}">See character</a>
             </li> 
             `;
             
