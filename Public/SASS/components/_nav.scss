@@ -1,0 +1,9 @@
+.nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // max-width: 20em;
+    margin: variables.$borderSceen*2 0;
+}

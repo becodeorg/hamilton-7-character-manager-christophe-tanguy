@@ -1,28 +1,46 @@
 .button
 {
-    width: 20em;
-    height: 2.5em;
-    margin: 15px auto;
-    display: block;
-    border-radius: 10px;
-    border: solid;
-    border-color: variables.$couleurButton;
-    color: #edf0ff;
-    background-color: variables.$couleurButton;
-    text-align: center;
-    text-decoration-line: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 
-    //Format desktop
+    max-width: 20em;
+    height: 2.5em;
+    margin: 15px auto;
+    border: 1px solid variables.$couleurButton;
+    border-radius: variables.$radiusButton;
+    padding: 0 1em;
+
+    font-size: 1rem;
+    text-align: center;
+    text-decoration-line: none;
+
+    &--full
+    {
+        @extend .button;
+        background-color: variables.$couleurButton;
+        color: variables.$couleurMain;
+    }
+
+    &--empty 
+    {
+        @extend .button;
+        background-color: variables.$couleurMain;
+        color: variables.$couleurButton;
+    }
+
+    &--nav
+    {
+        @extend .button--full;
+        width: 2.5em;
+        padding: 0;
+        margin: 0 0.5em;
+        border-radius: 100%;
+    }
 
     @media only screen and (min-width: variables.$desktop) 
     {
-        width: 30em;
-        height: 2em;
-        font-size: 25px;
+        height: 3em;
+        font-size: 1.5rem;
     }
-
 }
