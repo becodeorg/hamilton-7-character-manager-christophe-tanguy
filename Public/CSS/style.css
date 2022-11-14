@@ -227,6 +227,7 @@ body {
   border: 2px solid #06224a;
   width: 10em;
   height: 10em;
+  margin-bottom: 1em;
   background: #edf0ff;
 }
 .form__getimage:hover {
@@ -274,9 +275,14 @@ body {
 .form__getimage__button {
   display: none;
 }
+.form__label {
+  font-size: x-large;
+}
 .form__input {
+  background-color: #edf0ff;
   margin: 1em;
   padding: 1em;
+  border-radius: 1em;
   border: none;
 }
 
