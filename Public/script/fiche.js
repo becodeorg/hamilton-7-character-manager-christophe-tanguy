@@ -40,11 +40,10 @@ export function generateCart(data)
 export function generateFiche(data)
 {
     // ----------------- récupére les conteneurs
-    let title = document.getElementsByClassName('fiche__item__title')[0];
-    let image = document.getElementsByClassName('fiche__item__image')[0];
-    let description = document.getElementsByClassName('fiche__item__description')[0];
-    let shortDescription = document.getElementsByClassName('fiche__item__shortDescription')[0];
-    console.log(data);
+    let title = document.getElementsByClassName('fiche__data__txt__title')[0];
+    let image = document.getElementsByClassName('fiche__data__image')[0];
+    let description = document.getElementsByClassName('fiche__data__txt__description')[0];
+    let shortDescription = document.getElementsByClassName('fiche__data__txt__shortDescription')[0];
 
     // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
