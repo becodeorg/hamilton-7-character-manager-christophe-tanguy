@@ -22,7 +22,7 @@
         color: variables.$couleurMain;
     }
 
-    &--empty
+    &--empty 
     {
         @extend .button;
         background-color: variables.$couleurMain;

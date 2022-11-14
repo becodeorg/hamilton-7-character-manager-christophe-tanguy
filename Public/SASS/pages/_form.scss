@@ -23,6 +23,7 @@
         border: 2px solid variables.$couleurButton;
         width: 10em;
         height: 10em;
+        margin-bottom: 1em;
 
         background: variables.$couleurMain;
 
@@ -57,7 +58,6 @@
             border-radius: 100%;
             font-weight: 700;
             color: transparent;
-            // color: red;
             z-index: 1;
 
             &:hover
@@ -83,15 +83,27 @@
 
         &__button
         {
-            display:none
+            display:none;
         }
+    }
+
+    &__label
+    {
+    font-size: x-large;
     }
 
     &__input
     {
+        background-color: variables.$couleurMain;
+        
+
         margin: 1em;
         padding: 1em;
         width: 20em;
+
+
+        border-radius: variables.$radius;
+
         border: none;
         background-color: white;
     }
