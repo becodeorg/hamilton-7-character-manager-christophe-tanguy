@@ -57,13 +57,19 @@ switch (page[page.length-1]) {
             api = api + '/' + id;
             request.request(api, 'get', null, display.generateForm);
             method = 'put';
-            display.generateButtonForm(`delete`, `button--empty`,`delete`);
+            display.generateButtonForm(`delete`,`button--empty`,`delete`);
         }
 
         //initiolisation du bouton submit
         let submitButton = document.getElementById('save');
         submitButton.addEventListener('click', function() {
             request.request(api, method, request.getDataForm(), request.backHome);
+        });
+
+        let deteltButto = document.getElementById('delete');
+        deteltButto.addEventListener('click', function() {
+            // requet.deleteFiche(api + "/" + id);
+            request.request(api, 'delete', null, request.backHome);
         });
 
         //initiolisation du selecteur image

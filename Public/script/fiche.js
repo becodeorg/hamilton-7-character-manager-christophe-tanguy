@@ -70,10 +70,9 @@ export function generateForm(data)
 
 export function generateButtonForm(value,classe,id)
 {
-    let btn = document.createElement(`input`);
-    btn.type = `submit`;
-    btn.value = value;
-    btn.className = classe;
+    let btn = document.createElement(`div`);
+    btn.classList.add(classe);
+    btn.appendChild(document.createTextNode(value));
     btn.id = id;
 
     document.getElementsByClassName(`form__button`)[0].appendChild(btn);
