@@ -267,10 +267,11 @@ body {
 .form__getimage__button {
   display: none;
 }
-.form__input {
+.form__input, .trix-content {
   margin: 1em;
   padding: 1em;
   border: none;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

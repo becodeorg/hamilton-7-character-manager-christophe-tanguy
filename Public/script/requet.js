@@ -23,11 +23,11 @@ export function getDataForm()
 {
     let title = document.getElementById('name');
     let image = document.getElementById('image');
-    let description = document.getElementById('description');
+    let description = document.querySelector("trix-editor");
     let shortDescription = document.getElementById('shortDescription');
     let data = {
         name: title.value,
-        description: description.value,
+        description: description.editor.getDocument().toString(),
         shortDescription: shortDescription.value,
         image: image.src.replace(/^.+,/, '')
     };

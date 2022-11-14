@@ -57,12 +57,13 @@ export function generateForm(data)
     // ----------------- récupére les conteneurs
     let title = document.getElementById('name');
     let image = document.getElementById('image');
-    let description = document.getElementById('description');
+    // let description = document.getElementById('description');
+    let description = document.querySelector("trix-editor");
     let shortDescription = document.getElementById('shortDescription');
 
     // ----------------- remplis les conteneurs
     title.value = data.name;
-    // description.value = data.description;
+    description.editor.insertString(data.description);
     shortDescription.value = data.shortDescription;
     image.src = "data:image/gif;base64," + data.image;
 }
