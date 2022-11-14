@@ -68,6 +68,17 @@ export function generateForm(data)
     image.src = "data:image/gif;base64," + data.image;
 }
 
+export function generateButtonForm(value,classe,id)
+{
+    let btn = document.createElement(`input`);
+    btn.type = `submit`;
+    btn.value = value;
+    btn.className = classe;
+    btn.id = id;
+
+    document.getElementsByClassName(`form__button`)[0].appendChild(btn);
+}
+
 export function updateImage()
 {
     var selectedfile = document.getElementById("getimage").files;

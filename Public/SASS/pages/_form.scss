@@ -91,8 +91,20 @@
     {
         margin: 1em;
         padding: 1em;
+        width: 20em;
         border: none;
         background-color: white;
+    }
+
+    @media only screen and (min-width: variables.$tablette)
+    {
+        &__button
+        {
+            display: flex;
+            // justify-content: space-evenly;
+            width: 30em;
+            margin: 2em 0;
+        }
     }
 }
 

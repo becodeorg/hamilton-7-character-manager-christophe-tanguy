@@ -57,6 +57,7 @@ switch (page[page.length-1]) {
             api = api + '/' + id;
             request.request(api, 'get', null, display.generateForm);
             method = 'put';
+            display.generateButtonForm(`delete`, `button--empty`,`delete`);
         }
 
         //initiolisation du bouton submit
