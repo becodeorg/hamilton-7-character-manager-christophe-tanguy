@@ -100,7 +100,7 @@ function genaratePagination(data, search, pgcurent)
     // ----------------- génère les boutons
     if(pgcurent > 0)
     {
-        addPage(search, `<<`,pgcurent-1);
+        addPage(search, `<<`,pgcurent);
     }
     addPage(search, `1`,1);
     for (let i = 1; i < nbpage-1; i++)
@@ -118,7 +118,7 @@ function genaratePagination(data, search, pgcurent)
     addPage(search, nbpage,nbpage);
     if(pgcurent < nbpage-1)
         {
-            addPage(search, `>>`,pgcurent+1);
+            addPage(search, `>>`,pgcurent+2);
         }
 }
 
