@@ -27,7 +27,7 @@ export function getDataForm()
     let shortDescription = document.getElementById('shortDescription');
     let data = {
         name: title.value,
-        description: description.editor.getDocument(),
+        description: description.editor.getDocument().toString(),
         shortDescription: shortDescription.value,
         image: image.src.replace(/^.+,/, '')
     };
