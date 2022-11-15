@@ -47,9 +47,14 @@ export function generateFiche(data)
     let description = document.getElementsByClassName('fiche__data__txt__description')[0];
     let shortDescription = document.getElementsByClassName('fiche__data__txt__shortDescription')[0];
 
+    var showdown  = require('showdown');
+    let converter = new showdown.Converter();
+    let tmp = converter.makeHtml(data.description);
+    console.log(tmp);
+    
     // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
-    description.appendChild(document.createTextNode(data.description));
+    description.appendChild(document.createTextNode(tmp));
     shortDescription.appendChild(document.createTextNode(data.shortDescription));
     image.src = "data:image/gif;base64," + data.image;
 }
