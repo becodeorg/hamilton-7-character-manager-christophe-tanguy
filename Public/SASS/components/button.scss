@@ -20,6 +20,12 @@
         @extend .button;
         background-color: variables.$couleurButton;
         color: variables.$couleurMain;
+        
+        &:hover
+        {
+            background-color: variables.$couleurMain;
+            color: variables.$couleurButton
+        }
     }
 
     &--empty 
@@ -27,6 +33,12 @@
         @extend .button;
         background-color: variables.$couleurMain;
         color: variables.$couleurButton;
+
+        &:hover
+        {
+            background-color: variables.$couleurButton;
+            color: variables.$couleurMain
+        }
     }
 
     &--nav
@@ -37,11 +49,17 @@
         margin: 0 0.5em;
         border-radius: 100%;
 
+
         &--selected
         {
             @extend .button--nav;
             background-color: variables.$couleurMain;
             color: variables.$couleurButton;
+        }
+        
+        &:hover
+        {
+            background-color: variables.$couleurMain;
         }
     }
 
