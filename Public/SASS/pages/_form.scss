@@ -87,7 +87,7 @@
             
         }
     }
-
+ 
     &__label
     {
     font-size: x-large;
@@ -133,20 +133,22 @@
     
     @media only screen and (min-width: variables.$desktop) 
     {
+       
+       
         &__input
         {
-            width: 100em;
-            height: 10em;
+            width: 35%;
+            height: 4em;
         }
 
         &__label
         {
-            font-size: xx-large
+            font-size: xx-large;
         }
         
         #trix-toolbar-1
         {
-            width: 70em;
+            width: 40em;
             font-size: x-large;
         }
     }
@@ -155,19 +157,11 @@
 .trix-content
 {
     @extend .form__input;
+    height: 15em;
 }
 
 #trix-toolbar-1
 {
     width: 23em;
     margin-top: 1em;
-}
- 
-
-.trix-button trix-button--icon trix-button
-{
-    &--icon-strike
-    {
-        display: none;
-    }
 }
