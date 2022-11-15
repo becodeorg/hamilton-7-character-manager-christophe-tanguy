@@ -222,26 +222,16 @@ body {
 
 @media only screen and (min-width: 1920px) {
   .header {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
-    font-family: Poppins, sans-serif;
-    font-size: xx-large;
-    margin-top: 15px;
   }
   .header__title {
     margin-left: 0.2em;
   }
   .header__form__search {
-    display: flex;
-    border: solid;
-    align-items: right;
     width: 40em;
     height: 4em;
-    text-align: left;
-    margin-left: 0.725em;
-    margin-bottom: 1.5em;
   }
 }
 .fiche {
