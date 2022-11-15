@@ -50,7 +50,6 @@ export function generateFiche(data)
 
     let converter = new showdown.Converter();
     let html      = converter.makeHtml(data.description);
-    console.log(html);
     
     // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
