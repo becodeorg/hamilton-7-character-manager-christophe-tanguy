@@ -54,7 +54,7 @@ body {
 .button--nav:hover, .button--nav--selected:hover {
   background-color: #edf0ff;
 }
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1870px) {
   .button, .button--empty, .button--full, .button--nav, .button--nav--selected {
     height: 3em;
     font-size: 1.5rem;
@@ -220,7 +220,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1870px) {
   .header {
     flex-direction: row;
     justify-content: space-around;
@@ -294,7 +294,7 @@ body {
     margin: 2em 0;
   }
 }
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1870px) {
   .fiche__data__image {
     margin: 0 1em;
     width: 20em;
@@ -409,27 +409,27 @@ body {
     width: 36em;
   }
 }
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1870px) {
   .form__input, .trix-content {
-    width: 100em;
-    height: 10em;
+    width: 35%;
+    height: 4em;
   }
   .form__label {
     font-size: xx-large;
   }
   .form #trix-toolbar-1 {
-    width: 70em;
+    width: 40em;
     font-size: x-large;
   }
+}
+
+.trix-content {
+  height: 15em;
 }
 
 #trix-toolbar-1 {
   width: 23em;
   margin-top: 1em;
-}
-
-.trix-button trix-button--icon trix-button--icon-strike {
-  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
