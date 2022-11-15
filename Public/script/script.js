@@ -61,6 +61,15 @@ switch (page[page.length-1]) {
             request.request(api, 'get', null, display.generateForm);
             method = 'put';
             display.generateButtonForm(`delete`,`button--empty`,`delete`);
+
+            let deteltButto = document.getElementById('delete');
+            deteltButto.addEventListener('click', function() {
+                // requet.deleteFiche(api + "/" + id);
+                let answer = confirm("Are you sure you want to delete this character?");
+                if (answer) {
+                    request.request(api+"/"+id, 'delete', null, request.backHome);
+                }
+            });
         }
 
         //initiolisation du bouton submit
@@ -69,14 +78,7 @@ switch (page[page.length-1]) {
             request.request(api, method, request.getDataForm(), request.backHome);
         });
 
-        let deteltButto = document.getElementById('delete');
-        deteltButto.addEventListener('click', function() {
-            // requet.deleteFiche(api + "/" + id);
-            let answer = confirm("Are you sure you want to delete this character?");
-            if (answer) {
-                request.request(api+"/"+id, 'delete', null, request.backHome);
-            }
-        });
+       
 
         //initiolisation du selecteur image
         let change = document.getElementById('getimage');

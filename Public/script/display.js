@@ -46,7 +46,7 @@ export function generateFiche(data)
     let image = document.getElementsByClassName('fiche__data__image')[0];
     let description = document.getElementsByClassName('fiche__data__txt__description')[0];
     let shortDescription = document.getElementsByClassName('fiche__data__txt__shortDescription')[0];
-
+    
     // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
     description.appendChild(document.createTextNode(data.description));
