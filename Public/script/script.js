@@ -17,7 +17,7 @@ let id = myError.getValueURL(`id`, ``);
 switch (page[page.length-1]) {
 // si la page est la page list
     case 'list.html':
-        console.log("list");
+        console.log("list"+page[page.length-1]);
         // requet.traitement(api, fiche.createListe);
         request.request(api, 'get', null, display.generateCart);
 
@@ -31,7 +31,7 @@ switch (page[page.length-1]) {
 
 // si la page est la page de fiche
     case 'singleFiche.html':
-        console.log("singleFiche");
+        console.log("singleFiche"+page[page.length-1]);
         request.request(api + '/' + id, 'get', null, display.generateFiche);
 
         //initiolisation du bouton delete
