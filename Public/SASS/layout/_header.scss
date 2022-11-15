@@ -1,8 +1,8 @@
 .header
 {
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
     font-family: Poppins, sans-serif;
     font-size: xx-large;
     margin-top: 15px;
@@ -12,7 +12,11 @@
 
     &__title
     {
-        align-items: left;
+        margin-left: 0.2em;
+        font-weight: normal;
+        line-height: 1em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
     }
 
     &__form__search
@@ -20,8 +24,42 @@
         display: flex;
         border: solid;
         align-items: right;
-        width: 40em;
-        height: 4em;
+        width: 18em;
+        height: 3em;
         text-align: left;
+        margin-left: 0.725em;
+        margin-bottom: 1.5em;
     }
 }
+
+@media only screen and (min-width: variables.$desktop)
+{
+   .header
+   {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-family: Poppins, sans-serif;
+    font-size: xx-large;
+    margin-top: 15px;
+
+        &__title
+        {
+            margin-left: 0.2em;
+        }
+
+        &__form__search
+        {
+            display: flex;
+            border: solid;
+            align-items: right;
+            width: 40em;
+            height: 4em;
+            text-align: left;
+            margin-left: 0.725em;
+            margin-bottom: 1.5em;
+        }
+    } 
+}
+

@@ -96,11 +96,12 @@
     &__input
     {
         background-color: variables.$couleurMain;
+        font-size: large;
         
 
         margin: 1em;
         padding: 1em;
-        width: 20em;
+        width: 18em;
 
 
         border-radius: variables.$radius;
@@ -123,6 +124,11 @@
             width: 35em;
             height: 3em;
         }
+
+        #trix-toolbar-1
+        {
+            width: 36em;
+        } 
     }
     
     @media only screen and (min-width: variables.$desktop) 
@@ -138,10 +144,30 @@
             font-size: xx-large
         }
         
+        #trix-toolbar-1
+        {
+            width: 70em;
+            font-size: x-large;
+        }
     }
 }
 
 .trix-content
 {
     @extend .form__input;
+}
+
+#trix-toolbar-1
+{
+    width: 23em;
+    margin-top: 1em;
+}
+ 
+
+.trix-button trix-button--icon trix-button
+{
+    &--icon-strike
+    {
+        display: none;
+    }
 }
