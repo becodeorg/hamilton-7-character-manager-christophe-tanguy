@@ -54,7 +54,7 @@ export function generateFiche(data)
     
     // ----------------- remplis les conteneurs
     title.appendChild(document.createTextNode(data.name));
-    description.(document.createTextNode(data.description));
+    description.appendChild(document.createTextNode(data.description));
     shortDescription.appendChild(document.createTextNode(data.shortDescription));
     image.src = "data:image/gif;base64," + data.image;
 }
