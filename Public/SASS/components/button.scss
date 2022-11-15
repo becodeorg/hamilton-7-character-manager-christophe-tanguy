@@ -20,6 +20,12 @@
         @extend .button;
         background-color: variables.$couleurButton;
         color: variables.$couleurMain;
+        
+        &:hover
+        {
+            background-color: variables.$couleurMain;
+            color: variables.$couleurButton
+        }
     }
 
     &--empty 
@@ -27,6 +33,12 @@
         @extend .button;
         background-color: variables.$couleurMain;
         color: variables.$couleurButton;
+
+        &:hover
+        {
+            background-color: variables.$couleurButton;
+            color: variables.$couleurMain
+        }
     }
 
     &--nav
@@ -36,6 +48,11 @@
         padding: 0;
         margin: 0 0.5em;
         border-radius: 100%;
+
+        &:hover
+        {
+            background-color: variables.$couleurMain;
+        }
     }
 
     @media only screen and (min-width: variables.$desktop) 
