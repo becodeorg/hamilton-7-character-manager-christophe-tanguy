@@ -38,7 +38,10 @@ switch (page[page.length-1]) {
         let deteltButton = document.getElementById('delete');
         deteltButton.addEventListener('click', function() {
             // requet.deleteFiche(api + "/" + id);
-            request.request(api+"/"+id, 'delete', null, request.backHome);
+            let answer = confirm("Are you sure you want to delete this character?");
+            if (answer) {
+                request.request(api+"/"+id, 'delete', null, request.backHome);
+            }
         });
 
         //initiolisation du bouton edit
@@ -69,7 +72,10 @@ switch (page[page.length-1]) {
         let deteltButto = document.getElementById('delete');
         deteltButto.addEventListener('click', function() {
             // requet.deleteFiche(api + "/" + id);
-            request.request(api, 'delete', null, request.backHome);
+            let answer = confirm("Are you sure you want to delete this character?");
+            if (answer) {
+                request.request(api+"/"+id, 'delete', null, request.backHome);
+            }
         });
 
         //initiolisation du selecteur image
