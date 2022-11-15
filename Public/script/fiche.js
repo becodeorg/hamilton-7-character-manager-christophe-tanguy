@@ -120,6 +120,14 @@ function genaratePagination(data, search, pgcurent)
         {
             addPage(search, `>>`,pgcurent+2);
         }
+
+    //select the current page
+    if (pgcurent > 0)
+    {
+        ++pgcurent;
+    }
+        document.getElementsByClassName(`button--nav`)[pgcurent].classList.add(`button--nav--selected`);
+
 }
 
 function getNbPage(data, search)

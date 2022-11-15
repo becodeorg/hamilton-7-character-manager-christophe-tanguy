@@ -79,5 +79,5 @@ switch (page[page.length-1]) {
 // si la page n'est pas reconnue
     default:
         console.log("page inconnue");
-        window.location.href = "./pages/list.html";
+        window.location.href = "./pages/list.html?page=1";
 }
