@@ -8,7 +8,7 @@ module.exports = defineConfig({
                 main: "./index.html",
                 new: "./pages/form.html",
                 view: "./pages/list.html",
-                edit: "./pages/singleFiche.html"
+                edit: "./singleFiche.html"
             }
         }
     }
