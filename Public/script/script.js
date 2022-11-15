@@ -1,5 +1,5 @@
 import * as request from './requet.js';
-import * as display from './fiche.js';
+import * as display from './display.js';
 import * as myError from './error.js';
 
 let api = 'https://character-database.becode.xyz/characters';

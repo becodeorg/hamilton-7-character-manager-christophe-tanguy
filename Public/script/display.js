@@ -11,6 +11,9 @@ export function generateCart(data)
 
     let page = (myError.getValueURL(`page`, 1)-1)*nbCart;
     let html = ``;
+
+    data.sort(function(a, b) {return a.name.toLowerCase().localeCompare(b.name.toLowerCase());});
+
     for (let i = 0,j = 0; j<nbCart && page+i < data.length; i++)
     {
         if (data[page+i].name.toLowerCase().includes(nameSearch)) {
